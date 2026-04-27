@@ -3,7 +3,7 @@ from tkinter import *
 root = Tk()
 root.title("My project")
 
-root.geometry("400x300")
+root.geometry("600x500")
 
 #label_name
 label_name = Label(root, text="Enter name:")
@@ -35,5 +35,26 @@ course_var.set("Year 1")
 
 dropdown = OptionMenu(root, course_var, "Year 1", "Year 2", "Year 3", "Year 4")
 dropdown.pack()
+
+
+# Support needed (checkboxes)
+label_support = Label(root, text="Support needed:")
+label_support.pack()
+
+financial_var = IntVar()
+accommodation_var = IntVar()
+disability_var = IntVar()
+
+checkbox1 = Checkbutton(root, text="Financial support", variable=financial_var)
+checkbox1.pack()
+
+checkbox2 = Checkbutton(root, text="Accommodation", variable=accommodation_var)
+checkbox2.pack()
+
+checkbox3 = Checkbutton(root, text="Disability support", variable=disability_var)
+checkbox3.pack()
+
+
+
 
 root.mainloop()
