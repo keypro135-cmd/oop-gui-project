@@ -8,8 +8,19 @@ root.geometry("600x500")
 #label_name
 label_name = Label(root, text="Enter name:")
 label_name.pack()
-entry = Entry(root)
-entry.pack()
+entry_name = Entry(root)
+entry_name.pack()
+
+# Gender
+label_gender = Label(root, text="Gender:")
+label_gender.pack()
+
+gender_var = StringVar()
+gender_var.set("Male") 
+
+Radiobutton(root, text="Male", variable=gender_var, value="Male").pack()
+Radiobutton(root, text="Female", variable=gender_var, value="Female").pack()
+Radiobutton(root, text="Other", variable=gender_var, value="Other").pack()
 
 # GPA
 label_gpa = Label(root, text="Enter GPA:")
@@ -53,6 +64,33 @@ checkbox2.pack()
 
 checkbox3 = Checkbutton(root, text="Disability support", variable=disability_var)
 checkbox3.pack()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
