@@ -6,7 +6,7 @@ root.title("My project")
 root.geometry("600x500")
 
 #label_name
-label_name = Label(root, text="Enter name:")
+label_name = Label(root, text="Enter full name:")
 label_name.pack()
 entry_name = Entry(root)
 entry_name.pack()
@@ -66,8 +66,9 @@ checkbox3 = Checkbutton(root, text="Disability support", variable=disability_var
 checkbox3.pack()
 
 
-
-
+#save data function
+def save_data():
+    print("clicked")
 
 
 
