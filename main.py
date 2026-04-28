@@ -1,5 +1,8 @@
 from tkinter import *
 
+#sql 
+import sqlite3
+
 root = Tk()
 root.title("My project")
 
@@ -76,6 +79,35 @@ def save_data():
     course = course_var.get()
     gender = gender_var.get()
 
+# check GPA
+    try:
+        gpa = float(gpa)
+    except:
+        print("Error: GPA must be a number")
+        return
+    if gpa < 0 or gpa > 4:
+        print("Error: GPA must be between 0 and 4")
+        return
+    
+    #support
+    support = ""
+
+    if financial_var.get() == 1:
+        support += "Financial "
+
+    if accommodation_var.get() == 1:
+        support += "Accommodation "
+
+    if disability_var.get() == 1:
+        support += "Disability "
+
+  
+    print("Name:", name)
+    print("GPA:", gpa)
+    print("Year:", year)
+    print("Course:", course)
+    print("Gender:", gender)
+    print("Support:", support)
 
 
 
