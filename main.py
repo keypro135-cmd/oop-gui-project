@@ -70,6 +70,13 @@ checkbox3.pack()
 def save_data():
     print("clicked")
 
+    name = entry_name.get()
+    gpa = entry_gpa.get()
+    year = scale_year.get()
+    course = course_var.get()
+    gender = gender_var.get()
+
+
 
 
 
