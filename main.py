@@ -12,7 +12,24 @@ root.geometry("600x500")
 # connect to database
 conn = sqlite3.connect("students.db")
 
+# cursor
+cursor = conn.cursor()
 
+# create table
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS students (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    gender TEXT,
+    gpa REAL,
+    year INTEGER,
+    course TEXT,
+    support TEXT
+)
+""")
+
+#save 
+conn.commit()
 
 
 
