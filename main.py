@@ -90,6 +90,30 @@ def save_data():
 
 
 
+    #button
+button = Button(root, text="Save", command=save_data)
+button.pack()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
