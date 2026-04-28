@@ -8,6 +8,15 @@ root.title("My project")
 
 root.geometry("600x500")
 
+# DATABASE
+# connect to database
+conn = sqlite3.connect("students.db")
+
+
+
+
+
+
 #label_name
 label_name = Label(root, text="Enter full name:")
 label_name.pack()
