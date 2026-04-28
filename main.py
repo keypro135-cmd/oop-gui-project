@@ -127,6 +127,11 @@ def save_data():
     if disability_var.get() == 1:
         support += "Disability "
 
+
+
+
+INSERT INTO students ...
+
   
     print("Name:", name)
     print("GPA:", gpa)
