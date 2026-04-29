@@ -127,7 +127,7 @@ def save_data():
         support += "Disability, "
 
     support = support.rstrip(", ")
-    
+
 
     # INSERT INTO DATABASE
     cursor.execute("""
@@ -145,7 +145,25 @@ def save_data():
     print("Gender:", gender)
     print("Support:", support)
 
+    # clear form
 
+    # clear entries
+    entry_name.delete(0, END)
+    entry_gpa.delete(0, END)
+
+    # reset slider
+    scale_year.set(1980)
+
+    # reset dropdown
+    course_var.set("Year 1")
+
+    # reset gender
+    gender_var.set("Male")
+
+    # reset checkboxes
+    financial_var.set(0)
+    accommodation_var.set(0)
+    disability_var.set(0)
 
 # show students
 def show_students():
@@ -174,11 +192,11 @@ def show_students():
 
     #button
 button = Button(root, text="Save", command=save_data)
-button.pack()
+button.pack(pady=8)
 
 # show button
 show_button = Button(root, text="Show Students", command=show_students)
-show_button.pack()
+show_button.pack(pady=2)
 
 
 
@@ -186,28 +204,7 @@ show_button.pack()
 
 # text area
 text_area = Text(root, height=10, width=100)
-text_area.pack()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+text_area.pack(pady=10)
 
 
 
