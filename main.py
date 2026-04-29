@@ -6,7 +6,7 @@ import sqlite3
 root = Tk()
 root.title("My project")
 
-root.geometry("600x500")
+root.geometry("600x600")
 
 # DATABASE
 # connect to database
@@ -118,13 +118,15 @@ def save_data():
     support = ""
 
     if financial_var.get() == 1:
-        support += "Financial "
+        support += "Financial, "
 
     if accommodation_var.get() == 1:
-        support += "Accommodation "
+        support += "Accommodation, "
 
     if disability_var.get() == 1:
-        support += "Disability "
+        support += "Disability, "
+
+    
 
     # INSERT INTO DATABASE
     cursor.execute("""
@@ -144,7 +146,20 @@ def save_data():
 
 
 
+# show students
+def show_students():
 
+    # clear text area
+    text_area.delete(1.0, END)
+
+    # get data from database
+    cursor.execute("SELECT * FROM students")
+
+    students = cursor.fetchall()
+
+    # show each student
+    for student in students:
+        text_area.insert(END, str(student) + "\n")
 
 
 
@@ -162,8 +177,10 @@ button.pack()
 
 
 
+
+
 # text area
-text_area = Text(root, height=10, width=50)
+text_area = Text(root, height=10, width=100)
 text_area.pack()
 
 
