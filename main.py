@@ -94,10 +94,8 @@ checkbox2.pack()
 checkbox3 = Checkbutton(root, text="Disability support", variable=disability_var)
 checkbox3.pack()
 
-
 #save data function
 def save_data():
-    print("clicked")
 
     name = entry_name.get()
     gpa = entry_gpa.get()
@@ -105,17 +103,18 @@ def save_data():
     course = course_var.get()
     gender = gender_var.get()
 
-# check GPA
+    # check GPA
     try:
         gpa = float(gpa)
     except:
         print("Error: GPA must be a number")
         return
+
     if gpa < 0 or gpa > 4:
         print("Error: GPA must be between 0 and 4")
         return
-    
-    #support
+
+    # support
     support = ""
 
     if financial_var.get() == 1:
@@ -127,12 +126,15 @@ def save_data():
     if disability_var.get() == 1:
         support += "Disability "
 
+    # INSERT INTO DATABASE
+    cursor.execute("""
+    INSERT INTO students (name, gender, gpa, year, course, support)
+    VALUES (?, ?, ?, ?, ?, ?)
+    """, (name, gender, gpa, year, course, support))
 
+    conn.commit()
 
-
-INSERT INTO students ...
-
-  
+    # print data
     print("Name:", name)
     print("GPA:", gpa)
     print("Year:", year)
@@ -154,17 +156,15 @@ INSERT INTO students ...
 
 
 
-
-
-
-
-
-
     #button
 button = Button(root, text="Save", command=save_data)
 button.pack()
 
 
+
+# text area
+text_area = Text(root, height=10, width=50)
+text_area.pack()
 
 
 
