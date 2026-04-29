@@ -126,6 +126,7 @@ def save_data():
     if disability_var.get() == 1:
         support += "Disability, "
 
+    support = support.rstrip(", ")
     
 
     # INSERT INTO DATABASE
