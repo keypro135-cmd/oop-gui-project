@@ -175,6 +175,10 @@ def show_students():
 button = Button(root, text="Save", command=save_data)
 button.pack()
 
+# show button
+show_button = Button(root, text="Show Students", command=show_students)
+show_button.pack()
+
 
 
 
