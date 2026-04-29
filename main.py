@@ -8,6 +8,7 @@ root.title("My project")
 
 root.geometry("600x600")
 
+
 # DATABASE
 # connect to database
 conn = sqlite3.connect("students.db")
@@ -35,7 +36,7 @@ conn.commit()
 
 
 #label_name
-label_name = Label(root, text="Enter full name:")
+label_name = Label(root, text="Enter first name:")
 label_name.pack()
 entry_name = Entry(root)
 entry_name.pack()
